@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import auth from '../firebase.init';
-
+import DocumentTitle from 'react-document-title-hook';
 const Login = () => {
     const provider = new GoogleAuthProvider();
     const GitHubprovider = new GithubAuthProvider();
@@ -39,6 +39,7 @@ const Login = () => {
     }
     return (
         <div className='flex flex-col items-center'>
+              <DocumentTitle title="Login Page" />
             <h2>My Login Page</h2>
 
             <h2>{user?.displayName}</h2>
